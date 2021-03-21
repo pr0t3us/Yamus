@@ -2,8 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'com.google.gms.google-services' // REMOVE IF NOT USE FIREBASE
-    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -73,9 +71,4 @@ dependencies {
 
     implementation 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:4.0.0'
     implementation 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:4.0.0'
-
-    // REMOVE IF NOT USE FIREBASE
-    implementation platform('com.google.firebase:firebase-bom:26.2.0')
-    implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.google.firebase:firebase-crashlytics-ktx'
 }

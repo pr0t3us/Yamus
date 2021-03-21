@@ -41,9 +41,6 @@ import com.billy.android.swipe.listener.SimpleSwipeListener
 import com.google.android.exoplayer2.ui.PlayerControlView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.analytics.ktx.analytics
-import com.google.firebase.ktx.Firebase
 import kg.delletenebre.yamus.api.YandexApi
 import kg.delletenebre.yamus.api.YandexUser
 import kg.delletenebre.yamus.databinding.ActivityMainBinding
@@ -66,7 +63,6 @@ class MainActivity : ScopedAppActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainActivityViewModel
     private var searchViewModel: SearchViewModel? = null
-    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,8 +72,6 @@ class MainActivity : ScopedAppActivity() {
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
-
-        firebaseAnalytics = Firebase.analytics
 
         viewModel = ViewModelProvider(this, InjectorUtils.provideMainActivityViewModel(this)).get()
 
